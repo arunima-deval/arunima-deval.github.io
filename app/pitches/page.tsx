@@ -20,6 +20,38 @@ interface Pitch {
 
 const pitches: Pitch[] = [
   {
+    company: "Best Buy",
+    ticker: "BBY",
+    exchange: "NYSE",
+    type: "Short",
+    industry: "Consumer Discretionary",
+    date: "10/01/26",
+    logo: "/BBY.png",
+    links: [],
+  },
+  {
+    company: "Anheuser-Busch InBev",
+    ticker: "BUD",
+    exchange: "NYSE",
+    type: "Long",
+    industry: "Consumer Staples",
+    date: "09/28/26",
+    logo: "/ABI.png",
+    links: [
+      { label: "Pitch", url: "https://drive.google.com/file/d/16K9qwYV-fQaJPxc9llgS56DJcHxjfBhI/view?usp=drive_link" },
+    ],
+  },
+  {
+    company: "Estée Lauder",
+    ticker: "EL",
+    exchange: "NYSE",
+    type: "Short",
+    industry: "Consumer Staples",
+    date: "09/01/26",
+    logo: "/EL.png",
+    links: [],
+  },
+  {
     company: "Flutter Entertainment PLC",
     ticker: "FLUT",
     exchange: "NYSE",
@@ -139,11 +171,13 @@ export default function PitchesPage() {
                 {pitch.note && <p className="text-sm text-stone-400 italic mb-3">{pitch.note}</p>}
 
                 <div className="flex items-center gap-5">
-                  {pitch.links.map((link) => (
+                  {pitch.links.length > 0 ? pitch.links.map((link) => (
                     <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-stone-900 hover:text-stone-400 transition-colors underline underline-offset-4 decoration-stone-300">
                       {link.label} →
                     </a>
-                  ))}
+                  )) : (
+                    <span className="text-sm text-stone-400 italic">Coming soon</span>
+                  )}
                 </div>
               </div>
             </div>
