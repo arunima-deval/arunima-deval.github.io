@@ -12,8 +12,8 @@ interface ResearchEntry {
   role: string;
   period: string;
   note?: string;
+  color: string;
   projects: Project[];
-  projectsLayout?: "grid" | "stack";
 }
 
 const entries: ResearchEntry[] = [
@@ -21,8 +21,8 @@ const entries: ResearchEntry[] = [
     lab: "He Lab · UC Berkeley",
     role: "Undergraduate Researcher",
     period: "Sep 2024 – Present",
+    color: "#E0C8D0",
     note: "Selected to present at the 2026 Undergraduate Research Forum (URF).",
-    projectsLayout: "grid" as const,
     projects: [
       {
         title: "NC Domain Role in MERVL Gag RNA Binding",
@@ -39,14 +39,16 @@ const entries: ResearchEntry[] = [
     ],
   },
   {
-    lab: "Chemistry Research Symposium · UC Berkeley",
+    lab: "Analytical Chemistry Research · UC Berkeley",
     role: "Student Researcher",
     period: "Jan 2025 – May 2025",
+    color: "#C8C0D8",
+    note: "Selected to present at the Chemistry Research Symposium.",
     projects: [
       {
         title: "Nanoscale Water Filtration via Ginkgo Xylem",
         description:
-          "Developed a low-cost nanoscale water filter reducing Cu²⁺ ions using Ginkgo Xylem as a filtration medium — designed for underserved communities without access to conventional water treatment. Presented to 516+ attendees.",
+          "Developed a low-cost nanoscale water filter reducing Cu²⁺ ions using Ginkgo Xylem as a filtration medium designed for underserved communities without access to conventional water treatment. Presented to 516+ attendees.",
         poster: "https://docs.google.com/presentation/d/1g7p4mYM0z_kHxs3VRlPIK9orWGvBAO30k8rTBYH-rY0/present?slide=id.g3dd9ee3d5aa_0_62",
       },
     ],
@@ -55,6 +57,8 @@ const entries: ResearchEntry[] = [
     lab: "Pazzi Lab · ASDRP",
     role: "Student Researcher",
     period: "Jun 2023 – Jan 2024",
+    color: "#B8C8E8",
+    note: "Selected to present at the Boston Bioprocessing Summit.",
     projects: [
       {
         title: "Lipid Network Drug Delivery & Image Analysis",
@@ -76,28 +80,33 @@ export default function ResearchPage() {
           Research Experience
         </h1>
 
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-8">
           {entries.map((entry) => (
             <div key={entry.lab}>
-              <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 md:gap-4 mb-1">
-                <h2 className="text-base font-semibold text-stone-900">{entry.lab}</h2>
-                <span className="text-sm text-stone-400 shrink-0 italic">{entry.period}</span>
+              <div className="rounded-2xl p-5 mb-5" style={{ backgroundColor: entry.color }}>
+                <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1">
+                  <h2 className="text-base font-semibold text-stone-900">{entry.lab}</h2>
+                  <span className="text-sm text-stone-600 italic shrink-0">{entry.period}</span>
+                </div>
+                {entry.note && <p className="text-sm text-stone-600 mt-1">{entry.note}</p>}
               </div>
-              <p className="text-sm text-stone-500 italic mb-1">{entry.role}</p>
-              {entry.note && <p className="text-sm text-stone-400 mb-4">{entry.note}</p>}
-              {!entry.note && <div className="mb-4" />}
 
-              <div className={entry.projectsLayout === "grid" ? "grid grid-cols-1 md:grid-cols-2 gap-4" : "flex flex-col gap-4"}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 px-1">
                 {entry.projects.map((project) => (
-                  <div key={project.title} className="border border-stone-200 rounded-2xl p-6 hover:border-stone-400 hover:shadow-sm transition-all bg-white/60">
-                    <h3 className="text-base font-semibold text-stone-900 mb-3">{project.title}</h3>
-                    <p className="text-sm text-stone-500 leading-relaxed">{project.description}</p>
+                  <div key={project.title} className={`border-l-2 border-stone-200 pl-4 ${entry.projects.length === 1 ? "md:col-span-2" : ""}`}>
+                    <h3 className="text-sm font-semibold text-stone-900 mb-2">{project.title}</h3>
+                    <p className="text-sm text-stone-600 leading-relaxed">{project.description}</p>
                     {project.poster ? (
-                      <a href={project.poster} target="_blank" rel="noopener noreferrer" className="inline-flex items-center mt-4 text-sm font-medium text-stone-900 hover:text-stone-400 transition-colors underline underline-offset-4 decoration-stone-300">
+                      <a
+                        href={project.poster}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block mt-3 text-sm font-medium text-stone-900 underline underline-offset-4 decoration-stone-300 hover:decoration-stone-600 transition-colors"
+                      >
                         View Poster →
                       </a>
                     ) : (
-                      <p className="mt-4 text-sm text-stone-400 italic">Poster coming soon</p>
+                      <p className="mt-3 text-sm text-stone-400 italic">Poster coming soon</p>
                     )}
                   </div>
                 ))}

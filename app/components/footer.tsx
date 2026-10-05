@@ -13,7 +13,6 @@ const links = [
   { label: "Berkeley Investment Group", href: "https://www.berkeleyinvestment.group/", icon: <TrendingUp size={14} /> },
   { label: "He Lab", href: "https://www.helabucb.org/", icon: <Microscope size={14} /> },
   { label: "Pazzi Lab", href: "https://sites.google.com/asdrp.org/pazzi/alumni", icon: <FlaskConical size={14} /> },
-  { label: "Resume", href: "/resume.pdf", icon: <FileText size={14} /> },
   { label: "arunimad@berkeley.edu", href: "mailto:arunimad@berkeley.edu", icon: <Mail size={14} /> },
 ];
 

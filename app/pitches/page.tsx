@@ -141,8 +141,8 @@ export default function PitchesPage() {
         <h1 className="text-4xl font-semibold tracking-tight text-stone-900 mb-4">
           Investment Pitches
         </h1>
-        <p className="text-sm text-stone-500 leading-relaxed mb-6">
-          Always happy to hear feedback or just chat about any of these. Please feel free to reach out at <a href="mailto:arunimad@berkeley.edu" className="underline underline-offset-4 decoration-stone-300 hover:text-stone-900 transition-colors">arunimad@berkeley.edu</a>
+        <p className="text-sm text-stone-700 leading-relaxed mb-6">
+          I mostly specialize in Healthcare and Consumer sectors but I love expanding my horizons by pitching stocks in other sectors. I am always happy to hear feedback or just chat about any of these. Please feel free to reach out at <a href="mailto:arunimad@berkeley.edu" className="underline underline-offset-4 decoration-stone-300 hover:text-stone-900 transition-colors">arunimad@berkeley.edu</a>
         </p>
 
         <div className="flex flex-col">
@@ -157,18 +157,18 @@ export default function PitchesPage() {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1 md:gap-4 mb-2">
                   <div>
                     <span className="text-base font-semibold text-stone-900">{pitch.company}</span>
-                    <span className="text-sm text-stone-400 ml-2">{pitch.exchange}: {pitch.ticker}</span>
+                    <span className="text-sm text-stone-600 ml-2">{pitch.exchange}: {pitch.ticker}</span>
                   </div>
                   <div className="flex flex-wrap items-center gap-2 shrink-0">
-                    <span className="text-sm text-stone-400">{pitch.industry}</span>
+                    <span className="text-sm text-stone-600">{pitch.industry}</span>
                     <span className={`text-sm font-semibold rounded-full px-2.5 py-0.5 ${pitch.type === "Long" ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-red-50 text-red-600 border border-red-200"}`}>
                       {pitch.type}
                     </span>
-                    <span className="text-sm text-stone-400 italic">{pitch.date}</span>
+                    <span className="text-sm text-stone-600 italic">{pitch.date}</span>
                   </div>
                 </div>
 
-                {pitch.note && <p className="text-sm text-stone-400 italic mb-3">{pitch.note}</p>}
+                {pitch.note && <p className="text-sm text-stone-600 italic mb-3">{pitch.note}</p>}
 
                 <div className="flex items-center gap-5">
                   {pitch.links.length > 0 ? pitch.links.map((link) => (

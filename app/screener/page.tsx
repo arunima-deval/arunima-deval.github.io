@@ -7,9 +7,10 @@ export default function ScreenerPage() {
       <Nav />
 
       <main className="flex-1 px-4 md:px-12 pt-24 pb-16">
-        <h1 className="text-4xl font-semibold tracking-tight text-stone-900 mb-6">
+        <h1 className="text-4xl font-semibold tracking-tight text-stone-900 mb-2">
           Stock Screener
         </h1>
+        <p className="text-sm text-red-400 italic mb-6">Last updated Aug 15th</p>
         <p className="text-sm text-stone-500 leading-relaxed mb-8">
           I built this to automate part of the investment research process. As an analyst,
           I wanted to create a platform to consolidate filings and display sector-specific
