@@ -20,6 +20,31 @@ interface Pitch {
 
 const pitches: Pitch[] = [
   {
+    company: "Nike",
+    ticker: "NKE",
+    exchange: "NYSE",
+    type: "Short",
+    industry: "Consumer Discretionary",
+    date: "11/02/26",
+    logo: "/NKE.png",
+    links: [
+      { label: "Deck", url: "https://drive.google.com/file/d/1iRP5ZAKHipvkydX7LMq-0IkN-Lj30MtU/view?usp=drive_link" },
+      { label: "Model", url: "https://docs.google.com/spreadsheets/d/1eWZzV2n6in8Br-FMKMzLsg7WZdvS2UCt/edit?usp=drive_link" },
+    ],
+  },
+  {
+    company: "Amer Sports",
+    ticker: "AS",
+    exchange: "NYSE",
+    type: "Long",
+    industry: "Consumer Discretionary",
+    date: "10/20/26",
+    logo: "/AS.png",
+    links: [
+      { label: "Memo", url: "https://drive.google.com/file/d/1O0x9UTZphQs88SDS0fBWxBic4_wVia-x/view?usp=drive_link" },
+    ],
+  },
+  {
     company: "Best Buy",
     ticker: "BBY",
     exchange: "NYSE",
