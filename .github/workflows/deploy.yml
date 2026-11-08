@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "0 22 * * 1-5" # weekdays after US market close, refreshes stock prices
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -23,6 +26,7 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      - run: node scripts/fetch-prices.mjs
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
