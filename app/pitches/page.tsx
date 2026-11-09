@@ -31,7 +31,7 @@ const pitches: Pitch[] = [
     date: "11/02/26",
     logo: "/NKE.png",
     links: [
-      { label: "Deck", url: "https://drive.google.com/file/d/1YM0L2Pin7LLFX3nqS4sd5E3eWj0UTIn5/view?usp=drive_link" },
+      { label: "Deck", url: "https://drive.google.com/file/d/1VDn86uio5d86lQzbwIvuJlMEwQKjKIa6/view?usp=drive_link" },
       { label: "Model", url: "https://docs.google.com/spreadsheets/d/1lZbqOMXJ4G1zJLm7myLx_tTukge56U4n/edit?usp=drive_link&rtpof=true&sd=true" },
     ],
   },
